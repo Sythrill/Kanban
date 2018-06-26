@@ -1,5 +1,6 @@
-import uuid from 'uuid';
 import Lane from '../models/lane';
+import Note from '../models/note';
+import uuid from 'uuid';
 
 export function addLane(req, res) {
   if (!req.body.name) {
@@ -29,6 +30,12 @@ export function getLanes(req, res) {
 }
 
 export function deleteLane(req, res) {
+  Note.deleteMany({id: req.params.laneId}, (err) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+
   Lane.findOne({id: req.params.laneId}).exec((err, lane) => {
     if (err) {
       res.status(500).send(err);
