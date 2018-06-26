@@ -28,3 +28,15 @@ export function addNote(req, res) {
       });
   });
 }
+
+export function deleteNote(req, res) {
+  Note.findOne({id: req.params.noteId}).exec((err, lane) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    lane.remove(() => {
+      res.status(200).end();
+    });
+  });
+}
