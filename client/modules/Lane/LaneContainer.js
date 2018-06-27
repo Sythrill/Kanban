@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = {
   ...laneActions,
   addNote: createNote,
-  editLine,
 };
 
 export default connect(
