@@ -1,12 +1,11 @@
-import {connect} from 'react-redux';
-import Notes from './Notes';
-import * as noteActions from '../Note/NoteActions';
+import React, {PropTypes} from 'react';
+import styles from './Note.css';
 
-const mapDispatchToProps = {
-  ...noteActions,
+const Note = props =>
+  <li className={styles.Note}>{props.children}</li>;
+
+Note.propTypes = {
+  children: PropTypes.any,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Notes);
+export default Note;
