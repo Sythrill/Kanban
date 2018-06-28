@@ -2,12 +2,11 @@ import React, {Component, PropTypes} from 'react';
 import styles from './Edit.css';
 
 export default class Edit extends Component {
-
   checkEnter = (e) => {
     if (e.key === 'Enter') {
       this.finishEdit(e);
     }
-  };
+  }
 
   finishEdit = (e) => {
     const value = e.target.value;
@@ -15,11 +14,10 @@ export default class Edit extends Component {
     if (this.props.onUpdate) {
       this.props.onUpdate(value.trim());
     }
-  };
-
+  }
   renderDelete = () => {
-    return <button className={styles.delete} onClick={this.props.onDelete}>×</button>;
-  };
+    return <button className={styles.delete} onClick={this.props.onDelete}>X</button>;
+  }
 
   renderValue = () => {
     const {value, onDelete, onValueClick} = this.props;
@@ -30,7 +28,7 @@ export default class Edit extends Component {
         {onDelete ? this.renderDelete() : null}
       </div>
     );
-  };
+  }
 
   renderEdit = () => {
     return (
@@ -42,10 +40,9 @@ export default class Edit extends Component {
         onKeyPress={this.checkEnter}
       />
     );
-  };
+  }
 
   render() {
-
     return (
       <div className={this.props.className}>
         {this.props.editing ? this.renderEdit() : this.renderValue()}
@@ -60,4 +57,5 @@ Edit.propTypes = {
   onValueClick: PropTypes.func,
   onDelete: PropTypes.func,
   editing: PropTypes.bool,
+  className: PropTypes.string,
 };
