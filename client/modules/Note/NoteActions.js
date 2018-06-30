@@ -6,6 +6,7 @@ export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const CREATE_NOTES = 'CREATE_NOTES';
 export const EDIT_NOTE = 'EDIT_NOTE';
+export const MOVE_WITHIN_LANE = 'MOVE_NOTES';
 
 // Export Actions
 export function createNote(note, laneId) {
@@ -18,7 +19,7 @@ export function createNote(note, laneId) {
 
 export function createNoteRequest(note, laneId) {
   return (dispatch) => {
-    return callApi('notes', 'post', { note, laneId }).then(noteResp => {
+    return callApi('notes', 'post', {note, laneId}).then(noteResp => {
       dispatch(createNote(noteResp, laneId));
     });
   };
@@ -49,7 +50,7 @@ export function deleteNote(noteId, laneId) {
 
 export function deleteNoteRequest(noteId, laneId) {
   return (dispatch) => {
-    return callApi(`notes/${noteId}`, 'delete', { noteId, laneId }).then(() => {
+    return callApi(`notes/${noteId}`, 'delete', {noteId, laneId}).then(() => {
       dispatch(deleteNote(noteId, laneId));
     });
   };
@@ -66,5 +67,14 @@ export function editNote(noteId) {
   return {
     type: EDIT_NOTE,
     id: noteId,
+  };
+}
+
+export function moveWithinLane(laneId, targetId, sourceId) {
+  return {
+    type: MOVE_WITHIN_LANE,
+    laneId,
+    targetId,
+    sourceId,
   };
 }

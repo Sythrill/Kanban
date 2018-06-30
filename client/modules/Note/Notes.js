@@ -4,7 +4,6 @@ import styles from './Note.css';
 import Edit from '../../components/Edit';
 
 const Notes= (props) =>{
-  console.log(props);
   //const {notes, laneId, onValueClick, updateNote, deleteNote} = props ;
 
   return(
@@ -13,6 +12,7 @@ const Notes= (props) =>{
         id={note.id}
         key={note.id}
         laneId={props.laneId}
+        moveWithinLane={props.moveWithinLane}
       >
         <Edit
           editing={note.editing}
