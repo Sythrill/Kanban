@@ -3,6 +3,8 @@ import {lanes} from '../../util/schema';
 import {normalize} from 'normalizr';
 import {createNotes} from '../Note/NoteActions';
 
+export const MOVE_BETWEEN_LANES = 'MOVE_BETWEEN_LANES';
+
 // Export Constants
 export const CREATE_LANE = 'CREATE_LANE';
 export const UPDATE_LANE = 'UPDATE_LANE';
@@ -82,5 +84,14 @@ export function fetchLanes() {
       dispatch(createLanes(normalizedLanes));
       dispatch(createNotes(notes));
     });
+  };
+}
+
+export function moveBetweenLanes(targetLaneId, noteId, sourceLaneId) {
+  return {
+    type: MOVE_BETWEEN_LANES,
+    targetLaneId,
+    noteId,
+    sourceLaneId,
   };
 }
