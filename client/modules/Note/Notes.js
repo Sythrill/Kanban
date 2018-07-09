@@ -36,6 +36,7 @@ Notes.propTypes = {
   laneId: PropTypes.string,
   editNote: PropTypes.func,
   notes: PropTypes.array,
+  children: React.PropTypes.any,
 };
 
 export default Notes;

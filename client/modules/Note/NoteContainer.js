@@ -6,7 +6,7 @@ const mapDispatchToProps = {
   onValueClick: editNote,
   onUpdate: updateNoteRequest,
   onDelete: deleteNoteRequest,
-  moveWithinLane: moveWithinLane,
+  moveWithinLane,
 };
 
 export default connect(

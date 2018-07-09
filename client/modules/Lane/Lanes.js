@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Lane from './LaneContainer.js';
-
+import PropTypes from 'prop-types';
 const Lanes = ({lanes}) => {
   return (
     <div className="lanes">{lanes.map(lane =>
@@ -11,6 +11,7 @@ const Lanes = ({lanes}) => {
 
 Lanes.propTypes = {
   lanes: PropTypes.array,
+  children: PropTypes.element.isRequired,
 };
 
 export default Lanes;

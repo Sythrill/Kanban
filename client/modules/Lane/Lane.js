@@ -1,6 +1,7 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import NotesContainer from '../Note/NoteContainer';
 import Edit from '../../components/Edit';
+import PropTypes from 'prop-types';
 
 import styles from './Lane.css';
 
@@ -40,6 +41,7 @@ Lane.propTypes = {
   addNote: PropTypes.func,
   updateLane: PropTypes.func,
   deleteLane: PropTypes.func,
+  children: PropTypes.element.isRequired,
 };
 
 export default Lane;

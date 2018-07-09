@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import Lanes from '../Lane/Lanes';
-import styles from '../Lane/Lane.css';
-import {createLaneRequest, fetchLanes} from '../Lane/LaneActions';
-import {DragDropContext} from 'react-dnd';
+import { connect } from 'react-redux';
+import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import {compose} from 'redux';
+import { compose } from 'redux';
+import Lanes from '../Lane/Lanes';
+import { createLaneRequest, fetchLanes } from '../Lane/LaneActions';
+import styles from './Kanban.css';
 
 const Kanban = (props) => (
   <div>

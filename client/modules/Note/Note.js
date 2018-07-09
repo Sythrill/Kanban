@@ -1,8 +1,9 @@
-import React, {PropTypes} from 'react';
-import styles from './Note.css';
+import React from 'react';
 import {DragSource, DropTarget} from 'react-dnd';
 import {compose} from 'redux';
 import ItemTypes from '../Kanban/itemTypes';
+import styles from './Note.css';
+import PropTypes from 'prop-types';
 
 class Note extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ const noteTarget = {
 };
 
 Note.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.element.isRequired,
   connectDragSource: PropTypes.any,
   isDragging: PropTypes.any,
   editing: PropTypes.any,
