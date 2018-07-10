@@ -11,7 +11,7 @@ const Lanes = ({lanes}) => {
 
 Lanes.propTypes = {
   lanes: PropTypes.array,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };
 
 export default Lanes;

@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component} from 'react';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types'
 // Import Style
 import styles from './App.css';
 
@@ -69,7 +69,7 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.object,
   dispatch: PropTypes.func.isRequired,
   intl: PropTypes.object.isRequired,
 };

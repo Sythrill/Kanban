@@ -1,7 +1,8 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Note from './Note';
 import styles from './Note.css';
 import Edit from '../../components/Edit';
+import PropTypes from 'prop-types';
 
 const Notes= (props) =>{
   //const {notes, laneId, onValueClick, updateNote, deleteNote} = props ;
@@ -36,7 +37,7 @@ Notes.propTypes = {
   laneId: PropTypes.string,
   editNote: PropTypes.func,
   notes: PropTypes.array,
-  children: React.PropTypes.any,
+  children: PropTypes.any,
 };
 
 export default Notes;
